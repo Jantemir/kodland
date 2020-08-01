@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block style %} <style type="text/css"> 
+    .input__wrapper {
+width: 100%;
+position: relative;
+margin: 15px 0;
+text-align: center;
+}
+
+.input__file {
+opacity: 0;
+visibility: hidden;
+position: absolute;
+}
+
+.input__file-button-text {
+line-height: 1;
+margin-top: 1px;
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+width: 200px;
+height: 40px; 
+border: 1px solid #1565c0;
+}
+
+.input__file-button {
+width: 100%;
+max-width: 150px;
+height: 40px;
+background: #1565c0;
+color: #fff;
+font-size: 1.125rem;
+font-weight: 700;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+-webkit-box-pack: start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+border-radius: 3px;
+cursor: pointer;
+margin: 0 auto;
+}
+   </style>
+   {% endblock %}
+{% block title %} Добавление статьи {% endblock %}
+
+{% block body %} 
+<div class="container">
+    <h3>Добавить статью</h3>
+    <form action = "{% url 'articles:create_article' %}" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col s8"><input type = "text" required placeholder="Введите название статьи", name = "title"></div>
+            <div class="col s4"><button type="submit" class = 'btn pink'> Опубликовать  </button></div>
+        </div>
+        <div class="row">
+            <div class="col s8">
+                <div class="row"><textarea name = "descr" required placeholder = "Напишите краткое описание статьи", cols = "20", rows = "10"></textarea></div>
+                <div class="row"><textarea name = "text" required placeholder = "Напишите статью", cols = "50", rows = "20"></textarea> </div>
+            </div>
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-action center">
+                        <p>Загрузить изображение</p>
+                        <div class="input__wrapper">
+                            <input name = "docfile" id="input__file" class="input input__file" required type="file">
+                            <label for="input__file" class="input__file-button center">
+                                <div class="center">
+                               <span class="input__file-button-text">Файл</span>
+                            </div>
+                            </label>
+                         </div>
+                    </div>
+                    
+
+                    
+                    
+                              
+                              
+                            
+                  </div>
+            </div>
+                
+        
+        
+        
+         
+        
+
+    </form>
+</div>
+{% endblock %}

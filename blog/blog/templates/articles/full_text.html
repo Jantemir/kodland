@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<style type="text/css"> 
+    body {
+    background: rgb(233, 232, 232); /* Цвет фона */
+    color: rgb(5, 5, 5); /* Цвет текста */
+
+}
+</style>
+{% endblock %}
+{% block title %} {{article.art_title}} {% endblock %}
+
+{% block body %} 
+
+<div class="container">
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <h2> {{article.art_title}} </h2>
+                <div class="card">
+                    <div class="card-image">
+                        <img src =  {{article.art_pic}} >
+                </div>
+            </div>
+<p>
+    {{article.art_text}}
+</p>
+
+<em> {{article.public_date}} </em>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

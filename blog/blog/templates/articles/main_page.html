@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %} Главная страница{% endblock %}
+
+{% block body %} 
+
+{% if art_list %}
+
+
+<div class="container">
+    <br> <br>
+    <div class="row">
+        <div class="col s6">
+            
+            <h3>{{art_list.0.art_title}}</h3>
+            <p>
+                {{art_list.0.art_description}}
+            </p>
+            <a href = "{% url 'articles:full_text' art_list.0.id %}" class="waves-effect waves-light btn-large">Читать</a>
+        </div>
+        <div class="col s6">
+            <div class="card">
+                <div class="card-image">
+                    <img src =  {{art_list.0.art_pic}} >
+                </div>
+                
+            </div> 
+        </div>
+        </div>
+        <br> <br>
+    </div>
+
+    <div class="container">   
+        <br><br>
+<div class="row">
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+            <img src =  {{art_list.1.art_pic}} >
+        </div>
+        <div class="card-action center blue-text">
+          <a href = "{% url 'articles:full_text' art_list.1.id %}">{{art_list.1.art_title}}</a> <br>
+        </div>
+      </div>
+    </div>
+    <div class="col s3 offset-s1">
+        <div class="card">
+          <div class="card-image">
+            <img src = {{art_list.2.art_pic}} alt = {{art_list.2.art_title}}>
+        </div>
+        <div class="card-action center">
+          <a href = "{% url 'articles:full_text' art_list.2.id %}">{{art_list.2.art_title}}</a> <br>
+        </div>
+        </div>
+      </div>
+      <div class="col s3 offset-s1">
+        <div class="card">
+          <div class="card-image">
+            <img src = {{art_list.3.art_pic}} alt = {{art_list.3.art_title}}>
+        </div>
+        <div class="card-action center">
+          <a href = "{% url 'articles:full_text' art_list.3.id %}">{{art_list.3.art_title}}</a> <br>
+        </div>
+        </div>
+      </div>
+  </div>
+
+
+<div class="row">
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+          <img src = {{art_list.4.art_pic}} alt = {{art_list.4.art_title}}>
+        </div>
+        <div class="card-action center">
+          <a href = "{% url 'articles:full_text' art_list.4.id %}">{{art_list.4.art_title}}</a> <br>
+        </div>
+      </div>
+    </div>
+    <div class="col s3 offset-s1">
+        <div class="card">
+          <div class="card-image">
+            <img src = {{art_list.5.art_pic}} alt = {{art_list.5.art_title}}>
+        </div>
+        <div class="card-action center">
+          <a href = "{% url 'articles:full_text' art_list.5.id %}">{{art_list.5.art_title}}</a> <br>
+        </div>
+        </div>
+      </div>
+      <div class="col s3 offset-s1">
+        <div class="card">
+          <div class="card-image">
+            <img src = {{art_list.6.art_pic}} alt = {{art_list.6.art_title}}>
+        </div>
+        <div class="card-action center">
+          <a href = "{% url 'articles:full_text' art_list.6.id %}">{{art_list.6.art_title}}</a> <br>
+        </div>
+        </div>
+      </div>
+  </div>
+
+
+<div class="row">
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+            <img src = {{art_list.7.art_pic}} alt = {{art_list.7.art_title}}>
+        </div>
+        <div class="card-action center">
+          <a href = "{% url 'articles:full_text' art_list.7.id %}">{{art_list.7.art_title}}</a> <br>
+        </div>
+      </div>
+    </div>
+    <div class="col s3 offset-s1">
+        <div class="card">
+          <div class="card-image">
+            <img src = {{art_list.8.art_pic}} alt = {{art_list.8.art_title}}>
+          </div>
+          <div class="card-action center">
+            <a href = "{% url 'articles:full_text' art_list.8.id %}">{{art_list.8.art_title}}</a> <br>
+          </div>
+        </div>
+      </div>
+      <div class="col s3 offset-s1">
+        <div class="card">
+          <div class="card-image">
+            <img src = {{art_list.9.art_pic}} alt = {{art_list.9.art_title}}>
+          </div>
+          <div class="card-action center">
+            <a href = "{% url 'articles:full_text' art_list.9.id %}">{{art_list.9.art_title}}</a> <br>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+    {% else %}
+        Нет подходящих статей
+    {% endif %}
+{% endblock %}
